@@ -39,30 +39,16 @@
 
   // prettier-ignore
   const COMMANDS = new Map([
-    ['a', { name: 'Alphabet', searchTemplate: '/search?q={}', suggestions: ['a/drive', 'a/cal'], url: 'https://google.com' }],
-    ['a/cal', { url: 'https://calendar.google.com' }],
-    ['a/drive', { url: 'https://drive.google.com/drive/u/0/my-drive' }],
-    ['c', { name: 'Cloudflare', url: 'https://dash.cloudflare.com' }],
-    ['f', { name: 'Figma', url: 'https://www.figma.com' }],
-    ['g', { name: 'GitHub', searchTemplate: '/search?q={}', suggestions: ['g/copilot', 'g/trending'], url: 'https://github.com' }],
-    ['i', { name: 'Intuit', url: 'https://selfemployed.intuit.com/home' }],
-    ['o', { name: 'OpenAI', searchTemplate: '?q={}', url: 'https://chatgpt.com' }],
-    ['p', { name: 'Proton', searchTemplate: '/u/0/all-mail#keyword={}', suggestions: ['p/pass', 'p/drive'], url: 'https://mail.proton.me/u/0/inbox' }],
+    ['g', { name: 'GitHub', searchTemplate: '/search?q={}',  url: 'https://github.com' }],
+    ['p', { name: 'Proton', searchTemplate: '/u/0/all-mail#keyword={}', suggestions: ['p/cal', 'p/drive', p/vpn], url: 'https://mail.proton.me/u/0/inbox' }],
     ['p/drive', { url: 'https://drive.proton.me/u/0/' }],
-    ['p/pass', { url: 'https://pass.proton.me/u/0/' }],
-    ['s', { name: 'Supabase', url: 'https://supabase.com/dashboard/projects' }],
-    ['t', { name: 'TickTick', suggestions: ['t/habits', 't/pomo'], url: 'https://ticktick.com/webapp/#q/today/tasks' }],
-    ['t/habits', { url: 'https://ticktick.com/webapp/#q/all/habit' }],
-    ['t/pomo', { url: 'https://ticktick.com/webapp/#focus' }],
-    ['v', { name: 'Vercel', url: 'https://vercel.com/dashboard' }],
-    ['x', { name: 'xvvvyz', suggestions: ['x/torrent', 'x/proxy', 'x/droplet'], url: 'https://xvvvyz.xyz' }],
-    ['x/droplet', { url: 'https://cloud.digitalocean.com/projects/50ffcff7-ad65-40e3-af88-3cbc5a38cf99/resources' }],
-    ['x/proxy', { url: 'https://proxy.xvvvyz.xyz' }],
-    ['x/torrent', { url: 'https://torrent.xvvvyz.xyz' }],
-    ['0', { name: 'local', suggestions: ['0:54323', '0:54324'], url: 'http://localhost:3000' }],
-    ['0:54323', { url: 'http://localhost:54323' }],
-    ['0:54324', { url: 'http://localhost:54324' }],
-  ]);
+    ['p/cal', { url: 'https://calendar.proton.me/u/0/' }],
+    ['p/vpn', { url: 'https://account.proton.me/u/0/vpn/dashboard' }],
+    ['w', { name: 'WhatsApp', url: 'https://web.whatsapp.com/' }],
+    ['y', { name: 'Youtube', searchTemplate: '/results?search_query={}', url: 'https://www.youtube.com' }],
+    ['m', { name: 'Youtube Music', searchTemplate: '/search?q={}', url: 'https://music.youtube.com/' }],
+    ['r', { name: 'reddit', searchTemplate: '/search?q={}', url:'https://www.reddit.com' }],
+      ]);
 </script>
 
 <template id="commands-template">
