@@ -12,7 +12,7 @@
     --color-text-subtle: #888;
     --color-text: #ddd;
     --font-family: -apple-system, Helvetica, sans-serif;
-    --font-size: clamp(16px, 1.3vw, 18px);
+    --font-size: clamp(16px, 1.6vw, 18px);
     --font-weight-bold: 700;
     --font-weight-normal: 400;
     --space: 1rem;
@@ -39,37 +39,21 @@
 
   // prettier-ignore
   const COMMANDS = new Map([
-    ['a', { name: 'Chat', searchTemplate: '?q={}', url: 'https://chatgpt.com' }],
-    ['c', { name: 'Cloud', url: 'https://dash.cloudflare.com' }],
-    ['d', { name: 'Drive', url: 'https://drive.google.com/drive/u/0/my-drive' }],
-    ['e', { name: 'Resend', url: 'https://resend.com/emails?time=all&page=1' }],
-    ['f', { name: 'Figma', url: 'https://www.figma.com' }],
-    ['g', { name: 'Git', searchTemplate: '/search?q={}', suggestions: ['g/copilot', 'g/trending'], url: 'https://github.com' }],
-    ['i', { name: 'Intuit', url: 'https://selfemployed.intuit.com/home' }],
-    ['k', { name: 'Khan', url: 'https://www.khanacademy.org' }],
-    ['m', { name: 'Mail', searchTemplate: '/u/0/all-mail#keyword={}', url: 'https://mail.proton.me/u/0/inbox' }],
-    ['o', { name: 'Ocean', url: 'https://cloud.digitalocean.com/projects/50ffcff7-ad65-40e3-af88-3cbc5a38cf99/resources' }],
-    ['p', { name: 'Pass', url: 'https://pass.proton.me/u/0/' }],
-    ['r', { name: 'Reddit', searchTemplate: '/search/?q={}', url: 'https://www.reddit.com' }],
-    ['s', { name: 'Data', url: 'https://supabase.com/dashboard/projects' }],
-    ['t', { name: 'Tick', suggestions: ['t/inbox', 't/work', 't/habits', 't/focus'], url: 'https://ticktick.com/webapp/#q/today/tasks' }],
-    ['t/focus', { url: 'https://ticktick.com/webapp/#focus' }],
-    ['t/habits', { url: 'https://ticktick.com/webapp/#q/all/habit' }],
-    ['t/inbox', { url: 'https://ticktick.com/webapp/#p/inbox/tasks' }],
-    ['t/work', { url: 'https://ticktick.com/webapp/#p/66ec8e538f081710b4e85e52/tasks' }],
-    ['v', { name: 'Vercel', suggestions: ['v0.dev'], url: 'https://vercel.com/dashboard' }],
-    ['x', { name: 'Torrent', url: 'https://torrent.xvvvyz.xyz' }],
-    ['y', { name: 'Tube', searchTemplate: '/results?search_query={}', url: 'https://www.youtube.com/feed/subscriptions' }],
-    ['0', { name: 'local', suggestions: ['0:54323', '0:54324'], url: 'http://localhost:3000' }],
-    ['0:54323', { url: 'http://localhost:54323' }],
-    ['0:54324', { url: 'http://localhost:54324' }],
-  ]);
+    ['g', { name: 'GitHub', searchTemplate: '/search?q={}',  url: 'https://github.com' }],
+    ['p', { name: 'Proton', searchTemplate: '/u/0/all-mail#keyword={}', suggestions: ['p/cal', 'p/drive', p/vpn], url: 'https://mail.proton.me/u/0/inbox' }],
+    ['p/drive', { url: 'https://drive.proton.me/u/0/' }],
+    ['p/cal', { url: 'https://calendar.proton.me/u/0/' }],
+    ['p/vpn', { url: 'https://account.proton.me/u/0/vpn/dashboard' }],
+    ['w', { name: 'WhatsApp', url: 'https://web.whatsapp.com/' }],
+    ['y', { name: 'Youtube', searchTemplate: '/results?search_query={}', url: 'https://www.youtube.com' }],
+    ['m', { name: 'Youtube Music', searchTemplate: '/search?q={}', url: 'https://music.youtube.com/' }],
+    ['r', { name: 'reddit', searchTemplate: '/search?q={}', url:'https://www.reddit.com' }],
+      ]);
 </script>
 
 <template id="commands-template">
   <style>
     .commands {
-      border-radius: var(--border-radius);
       column-gap: 0;
       columns: 2;
       list-style: none;
@@ -118,17 +102,16 @@
       color: var(--color-text);
     }
 
-    @media (min-width: 40rem) {
+    @media (min-width: 23rem) {
       .commands {
-        columns: 3;
-        max-width: 30rem;
+        border-radius: var(--border-radius);
       }
     }
 
-    @media (min-width: 70rem) {
+    @media (min-width: 62rem) {
       .commands {
-        columns: 6;
-        max-width: 60rem;
+        columns: 4;
+        max-width: 44rem;
       }
     }
   </style>
